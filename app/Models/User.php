@@ -2,10 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Model
 {
@@ -19,15 +17,14 @@ class User extends Model
      * $this->attributes['name'] - string - contains the username
 
      * $this->attributes['password'] - string - contains password of the user
-     
-     * $this->attributes['email'] - string - contains email of the user
-      
-     * $this->attributes['address'] - string - contains address of the user
-      
-     * $this->attributes['wallet'] - int - contains the economic capital of the user
-      
-     * $this->attributes['rol'] - string - contains rol of the user (common user/admin)
 
+     * $this->attributes['email'] - string - contains email of the user
+
+     * $this->attributes['address'] - string - contains address of the user
+
+     * $this->attributes['wallet'] - int - contains the economic capital of the user
+
+     * $this->attributes['rol'] - string - contains rol of the user (common user/admin)
      */
     protected $fillable = ['name', 'email', 'password', 'address', 'rol', 'wallet'];
 
@@ -124,5 +121,4 @@ class User extends Model
 
         $this->attributes['rol'] = $rol;
     }
-
 }

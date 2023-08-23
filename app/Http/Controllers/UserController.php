@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
@@ -50,16 +50,17 @@ class UserController extends Controller
         ]);
         User::create($request->only(['name', 'email', 'password', 'rol', 'address', 'wallet']));
 
-        return back()->with("Usuario guardado");
+        return back()->with('Usuario guardado');
     }
 
-    public function delete($id){
-        try{
+    public function delete($id)
+    {
+        try {
             $sql = DB::delete("delete from users where id=$id");
-        } catch (\Throwable $th){
+        } catch (\Throwable $th) {
             $sql = 0;
         }
-        if ($sql == true){
+        if ($sql == true) {
             return back()->with('Correcto');
         } else {
             return back()->with('Incorrecto');
